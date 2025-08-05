@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séléctioneur de type de Peau</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <h1>Les différents types de peau</h1>
+    <table>
+        <tr>
+            <th rowspan="2" class="haut bas gauche droite">ASPECT VISUEL</th>
+            <th colspan="2" class="haut bas gauche droite">ZONE MEDIANE</th>
+            <th colspan="2" class="haut bas gauche droite">ZONE LATERALE</th>
+        </tr>
+        <tr>
+            <td class="haut bas gauche">
+                <input type="checkbox" class="dilatés_med"> Ostia dilatés <br>
+                <input type="checkbox" class="taches_med"> Tâches pigmentaires <br>
+                <input type="checkbox" class="terne_med"> Teint terne <br>
+                <input type="checkbox" class="rougeurs_med"> Rougeurs <br>
+                <input type="checkbox" class="naevi_med"> Naevi <br>
+            </td>
+            <td class="haut bas droite">
+                <input type="checkbox" class="serrés_med"> Ostia serrés <br>
+                <input type="checkbox" class="rides_med"> Rides ridules <br>
+                <input type="checkbox" class="brillance_med"> Brillance <br>
+                <input type="checkbox" class="squames_med"> Squames <br>
+                <input type="checkbox" class="ephélides_med"> Ephélides <br>
+            </td>
+            <td class="haut bas gauche">
+                <input type="checkbox" class="dilatés_lat"> Ostia dilatés <br>
+                <input type="checkbox" class="taches_lat"> Tâches pigmentaires <br>
+                <input type="checkbox" class="terne_lat"> Teint terne <br>
+                <input type="checkbox" class="rougeurs_lat"> Rougeurs <br>
+                <input type="checkbox" class="naevi_lat"> Naevi <br>
+            </td>
+            <td class="haut bas droite">
+                <input type="checkbox" class="serrés_lat"> Ostia serrés <br>
+                <input type="checkbox" class="rides_lat"> Rides ridules <br>
+                <input type="checkbox" class="brillance_lat"> Brillance <br>
+                <input type="checkbox" class="squames_lat"> Squames <br>
+                <input type="checkbox" class="ephélides_lat"> Ephélides <br>
+            </td>
+        </tr>
+        <tr>
+            <th rowspan="2" class="haut bas gauche droite">ASPECT PALPATOIRE</th>
+            <th colspan="2" class="haut bas gauche droite">ZONE MEDIANE</th>
+            <th colspan="2" class="haut bas gauche droite">ZONE LATERALE</th>
+        </tr>
+        <tr>
+            <td class="haut bas gauche">
+                <input type="checkbox" class="fine_med"> Peau fine <br>
+                <input type="checkbox" class="lisse_med"> Peau lisse <br>
+                <input type="checkbox" class="granuleuse_med"> Peau granuleuse
+            </td>
+            <td class="haut bas droite">
+                <input type="checkbox" class="épaisse_med"> Peau épaisse <br>
+                <input type="checkbox" class="rêche_med"> Peau rêche </br>
+                <input type="checkbox" class="veloutée_med"> Peau veloutée
+
+            </td>
+            <td class="haut bas gauche">
+                <input type="checkbox" class="fine_lat"> Peau fine <br>
+                <input type="checkbox" class="lisse_lat"> Peau lisse <br>
+                <input type="checkbox" class="granuleuse_lat"> Peau granuleuse
+            </td>
+            <td class="haut bas droite">
+                <input type="checkbox" class="épaisse_lat"> Peau épaisse <br>
+                <input type="checkbox" class="rêche_lat"> Peau rêche </br>
+                <input type="checkbox" class="veloutée_lat"> Peau veloutée
+
+            </td>
+        </tr>
+        <tr>
+            <th class="haut bas gauche droite">TONICITE</th>
+            <td colspan="2" class="haut bas gauche">
+                <input type="checkbox" class="bonne_tonicité"> Bonne tonicité
+            </td>
+            <td colspan="2" class="haut bas droite">
+                <input type="checkbox" class="tonicité_insuffisante"> Tonicité insuffisante
+            </td>
+        </tr>
+        <tr>
+            <th class="haut bas gauche droite">AUTRES OBSERVATIONS</th>
+            <td class="haut bas gauche">
+                <input type="checkbox" class="comédons"> Comédons
+            </td>
+            <td class="haut bas">
+                <input type="checkbox" class="couperose"> Couperose ou télangiectasie
+            </td>
+            <td class="haut bas">
+                <input type="checkbox" class="stries"> Stries de déshydratation
+            </td>
+            <td class="haut bas droite">
+                <input type="checkbox" class="atonie"> Atonie
+            </td>
+        </tr>
+
+
+    </table>
+
+    <div class="button-container">
+        <button onclick="validateCheckboxes()">Valider</button>
+        <button onclick="deSelectAll()">Tout déselectionner</button>
+    </div>
+    <div class="result" id="Type"></div>
+    <div class="result" id="Etat"></div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

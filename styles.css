@@ -1,0 +1,190 @@
+/* Variables CSS simples */
+:root {
+  --primary-color: #4a90e2;
+  --light-blue: #e8f4f8;
+  --light-yellow: #fef9e7;
+  --light-purple: #f3f0ff;
+  --light-gray: #f8f9fa;
+  --border-color: #ddd;
+  --text-color: #333;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: #f5f6fa;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Table container */
+.table-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin: 0 auto 3rem; /* au lieu de 2rem */
+  max-width: 1000px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+/* En-têtes */
+th {
+  color: black;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+}
+
+/* Cellules */
+td {
+  padding: 1.2rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--border-color);
+}
+
+/* Bordures */
+.droite { border-right: 2px solid var(--border-color); }
+.gauche { border-left: 2px solid var(--border-color); }
+.bas { border-bottom: 2px solid var(--border-color); }
+.haut { border-top: 2px solid var(--border-color); }
+
+td label {
+  display: block;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+td label:last-child {
+  margin-bottom: 0;
+}
+
+td label:hover {
+  color: var(--primary-color);
+}
+
+tr:nth-child(1) {background-color: #9ff5fe;}
+tr:nth-child(2) {background-color: #9ff5fe;}
+tr:nth-child(3) {background-color: #fdfdb0;}
+tr:nth-child(4) {background-color: #fdfdb0;}
+tr:nth-child(5) {background-color: #edbdfe;}
+tr:nth-child(6) {background-color: #ffdad6;}
+
+/* Boutons */
+.button-container {
+  text-align: center;
+  margin: 2rem 0;
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 150px;
+}
+
+button:hover {
+  background-color: #3a7bc8;
+}
+
+button:nth-child(2) {
+  background-color: #dc3545;
+}
+
+button:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+/* Résultats */
+.result {
+  text-align: center;
+  font-family: inherit;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result:not(:empty) {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+    padding: 0.6rem 0.3rem;
+    font-size: 0.85rem;
+  }
+  
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+}
