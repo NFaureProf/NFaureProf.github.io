@@ -1,10 +1,6 @@
-/* Variables CSS simples */
+
 :root {
   --primary-color: #4a90e2;
-  --light-blue: #e8f4f8;
-  --light-yellow: #fef9e7;
-  --light-purple: #f3f0ff;
-  --light-gray: #f8f9fa;
   --border-color: #ddd;
   --text-color: #333;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -20,61 +16,57 @@ body {
   color: var(--text-color);
   background-color: #f5f6fa;
   margin: 0;
+  padding: 15px;
 }
 
 h1 {
   text-align: center;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: var(--text-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   font-weight: 600;
 }
 
-/* Table container */
-.table-wrapper {
+/* Version Desktop/Tablette - Table normale */
+.desktop-table {
   background: white;
   border-radius: 8px;
   box-shadow: var(--shadow);
-  overflow: hidden;
-  margin: 0 auto 3rem; /* au lieu de 2rem */
+  overflow-x: auto;
+  margin: 0 auto 3rem;
   max-width: 1000px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  font-family: inherit;
+  min-width: 600px;
 }
 
-/* En-têtes */
 th {
   color: black;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   text-align: center;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   border: 1px solid var(--border-color);
 }
 
-/* Cellules */
 td {
-  padding: 1.2rem;
+  padding: 1rem 0.5rem;
   text-align: left;
   vertical-align: top;
   border: 1px solid var(--border-color);
 }
 
-/* Bordures */
-.droite { border-right: 2px solid var(--border-color); }
-.gauche { border-left: 2px solid var(--border-color); }
-.bas { border-bottom: 2px solid var(--border-color); }
-.haut { border-top: 2px solid var(--border-color); }
-
 td label {
-  display: block;
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 0.85rem;
+  gap: 0.5rem;
 }
 
 td label:last-child {
@@ -85,6 +77,20 @@ td label:hover {
   color: var(--primary-color);
 }
 
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Bordures renforcées */
+.droite { border-right: 2px solid var(--border-color); }
+.gauche { border-left: 2px solid var(--border-color); }
+.bas { border-bottom: 2px solid var(--border-color); }
+.haut { border-top: 2px solid var(--border-color); }
+
+/* Couleurs des lignes */
 tr:nth-child(1) {background-color: #9ff5fe;}
 tr:nth-child(2) {background-color: #9ff5fe;}
 tr:nth-child(3) {background-color: #fdfdb0;}
@@ -92,11 +98,15 @@ tr:nth-child(4) {background-color: #fdfdb0;}
 tr:nth-child(5) {background-color: #edbdfe;}
 tr:nth-child(6) {background-color: #ffdad6;}
 
+/* Version Mobile - Sections empilées */
+.mobile-sections {
+  display: none;
+}
+
 /* Boutons */
 .button-container {
   text-align: center;
   margin: 2rem 0;
-  margin-top: 3rem;
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -107,7 +117,7 @@ button {
   background-color: var(--primary-color);
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 6px;
   font-size: 1rem;
   font-weight: 500;
@@ -131,7 +141,6 @@ button:nth-child(2):hover {
 /* Résultats */
 .result {
   text-align: center;
-  font-family: inherit;
   margin: 1rem auto;
   font-size: 1.2rem;
   font-weight: 600;
@@ -152,39 +161,150 @@ button:nth-child(2):hover {
   border: 1px solid #c3e6cb;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  body {
-    padding: 15px;
+/* RESPONSIVE - Mobile */
+@media (max-width: 640px) {
+  /* Cache le tableau, affiche les sections mobiles */
+  .desktop-table {
+    display: none;
   }
-  
-  table {
+
+  .mobile-sections {
+    display: block;
+  }
+
+  /* Sections mobiles */
+  .mobile-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .section-header {
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+
+  .section-header.visuel {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+  }
+
+  .section-header.palpatoire {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  }
+
+  .section-header.tonicite {
+    background: linear-gradient(135deg, #d299c2, #fef9d7);
+  }
+
+  .section-header.autres {
+    background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  }
+
+  .zone-container {
+    padding: 1.5rem;
+  }
+
+  .zone {
+    margin-bottom: 2rem;
+  }
+
+  .zone:last-child {
+    margin-bottom: 0;
+  }
+
+  .zone-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+  .zone-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .zone-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .zone-column label {
+    display: flex;
+    align-items: flex-start;
     font-size: 0.9rem;
+    cursor: pointer;
+    gap: 0.6rem;
+    padding: 0.3rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
   }
-  
-  th, td {
-    padding: 0.8rem 0.5rem;
+
+  .zone-column label:hover {
+    background-color: #f8f9fa;
+    color: var(--primary-color);
   }
-  
+
+  .zone-column input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Sections spéciales avec une seule colonne */
+  .single-column .zone-content {
+    grid-template-columns: 1fr;
+  }
+
+  .single-column .zone-column {
+    max-width: none;
+  }
+
+  /* Boutons mobiles */
   .button-container {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
-  
+
   button {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
+    padding: 1rem;
   }
 }
 
-@media (max-width: 480px) {
-  th, td {
-    padding: 0.6rem 0.3rem;
+/* Très petits écrans */
+@media (max-width: 400px) {
+  body {
+    padding: 10px;
+  }
+
+  .zone-content {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-column label {
     font-size: 0.85rem;
   }
-  
-  input[type="checkbox"] {
+
+  .zone-column input[type="checkbox"] {
     width: 16px;
     height: 16px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
   }
 }
