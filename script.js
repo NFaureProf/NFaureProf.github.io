@@ -61,12 +61,12 @@ function validateCheckboxes() {
     const taches = taches_lat + taches_med;
     const terne = terne_lat + terne_med;
     const rougeurs = rougeurs_lat + rougeurs_med;
-    const naevi = naevi_lat + naevi_med;    // Pas utile ?
+    const naevi = naevi_lat + naevi_med;
     const serrés = serrés_lat + serrés_med;
     const rides = rides_lat + rides_med;
     const brillance = brillance_lat + brillance_med;
     const squames = squames_lat + squames_med;
-    const ephélides = ephélides_lat + ephélides_med;    // Pas utile ?
+    const ephélides = ephélides_lat + ephélides_med;
 
     const fine = fine_lat + fine_med;
     const lisse = lisse_lat + lisse_med;
@@ -114,11 +114,9 @@ function validateCheckboxes() {
         resultEtat = "Etat mature"
     }
 
-
     document.getElementById('Type').innerText = resultType;
     document.getElementById('Etat').innerText = resultEtat;
 }
-
 
 function deSelectAll() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
